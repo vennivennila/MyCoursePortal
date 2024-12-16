@@ -1,0 +1,203 @@
+/* st.css */
+
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* Navbar Styling */
+.navbar {
+    margin-bottom: 20px;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+}
+
+.navbar-nav .btn {
+    font-size: 1rem;
+}
+
+/* Hero Section */
+.jumbotron {
+    padding: 50px 0;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+}
+
+.jumbotron .display-4 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.jumbotron .lead {
+    font-size: 1.2rem;
+}
+
+.jumbotron .btn {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+/* Courses Section */
+#courses {
+    padding: 50px 0;
+}
+
+#courses h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.card {
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    border-radius: 8px 8px 0 0;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.card .btn {
+    font-size: 1.1rem;
+}
+
+/* About Section */
+#about {
+    background-color: #e9ecef;
+    padding: 50px 0;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#about ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#about ul li {
+    font-size: 1.2rem;
+    color: #495057;
+}
+
+#about h5 {
+    font-size: 1.5rem;
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px 0;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.card.bg-light {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card .card-text {
+    font-size: 1rem;
+    color: #6c757d;
+}
+.bg1{
+    background-image: url("https://res.cloudinary.com/dmjwhclog/image/upload/v1734202396/Course_h2jytg.jpg");
+}
+
+/* Modal Styling */
+.modal-content {
+    padding: 20px;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+}
+
+.modal-body h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal-footer {
+    padding-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-nav .nav-item {
+        text-align: center;
+    }
+
+    .jumbotron .display-4 {
+        font-size: 2.5rem;
+    }
+
+    .card-img-top {
+        height: 150px;
+    }
+}
+/* Footer Styling */
+.footer {
+    background-color: #2c3e50; /* Dark background color */
+    color: #ffffff; /* White text color */
+    display: flex; /* Enables Flexbox for easy centering */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    text-align: center; /* Ensures the text remains center-aligned */
+    padding: 20px 0; /* Adds vertical spacing for a clean look */
+    width: 100%; /* Ensures the footer spans full width */
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+  }
+  
+  .footer-content {
+    max-width: 1200px; /* Restricts the width of footer content for better alignment */
+    font-family: Arial, sans-serif; /* Sets a clean font */
+    font-size: 14px; /* Sets the text size */
+  }
+  
+  .footer-content p {
+    margin: 0; /* Removes default paragraph margin */
+  }
+  

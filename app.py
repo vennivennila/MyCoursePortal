@@ -79,19 +79,24 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        
+        # Database connection
         conn = sqlite3.connect('courses.db')
         cursor = conn.cursor()
         cursor.execute('SELECT id, username, password, is_admin FROM users WHERE username = ?', (username,))
         user = cursor.fetchone()
         conn.close()
-        if user and check_password_hash(user[2], password):  # Check if password matches
+        
+        # Verify user
+        if user and check_password_hash(user[2], password):
             user_id, _, _, is_admin = user
-            if is_admin == 1:  # Admin user
+            if is_admin == 1:  # Admin
                 return redirect(url_for('admin'))
             else:  # Regular user
                 return redirect(url_for('user'))
         else:
-            flash('Invalid credentials')
+            flash('Invalid credentials', 'error')
+    
     return render_template('login.html')
 
 @app.route('/courses')

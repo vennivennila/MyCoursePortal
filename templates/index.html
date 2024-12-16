@@ -3,55 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome - My Course Portal</title>
+    <title>My Course Portal</title>
     <!-- Add Bootstrap CSS via CDN -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Add Custom CSS -->
-    <link href="static/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            height: 50px;
+            width: 100%;
+        }
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 text-center">
-                <h1 class="mt-5">Welcome to My Course Portal!</h1>
-                <p class="lead">A platform for students to explore and enroll in various courses.</p>
-                <div class="btn-group mt-4" role="group">
-                    <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg">Login</a>
-                    <a href="{{ url_for('register') }}" class="btn btn-success btn-lg">Register</a>
-                </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Course Portal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg">Login</a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
 
-        <div class="row mt-5">
-            <div class="col-md-6">
-                <div class="card">
+    <!-- Hero Section with Creative Description -->
+    <div class="jumbotron text-center bg-primary text-white">
+        <div class="container">
+            <h1 class="display-4">Welcome to My Course Portal!</h1>
+            <p class="lead">Transform your career and skills with our expertly crafted courses. Whether you're looking to learn a new skill, advance your career, or embark on a new adventure, we have something for everyone.</p>
+            <p class="lead">Our courses are designed to provide hands-on experience, flexible learning schedules, and industry-relevant content.</p>
+            <a href="#courses" class="btn btn-light btn-lg">Explore Our Courses</a>
+        </div>
+    </div>
+
+    <!-- Courses Section -->
+    <div class="container mt-5" id="courses">
+        <h2 class="text-center mb-4">Our Courses</h2>
+        <div class="row">
+            <!-- Card 1: Programming Languages -->
+            <div class="col-md-4">
+                <div class="card shadow-lg">
+                    <img src="https://res.cloudinary.com/dmjwhclog/image/upload/v1734360576/download_afhodv.png" style="width: auto; height: 170px;" class="card-img-top" alt="Programming">
                     <div class="card-body">
-                        <h5 class="card-title">Explore Courses</h5>
-                        <p class="card-text">Browse a wide range of courses available to help you grow your skills!</p>
-                        <a href="{{ url_for('courses') }}" class="btn btn-info">View Courses</a>
+                        <h5 class="card-title">Programming Languages</h5>
+                        <p class="card-text">Learn the fundamentals and advanced concepts in Python, Java, C++, and more!</p>
+                        <p class="card-text"><strong>Duration:</strong> 6 weeks | <strong>Level:</strong> Beginner to Advanced</p>
+                        <a href="#programmingModal" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#programmingModal">Learn More</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6">
-                <div class="card">
+            <!-- Card 2: Web Development -->
+            <div class="col-md-4">
+                <div class="card shadow-lg">
+                    <img src="https://res.cloudinary.com/dmjwhclog/image/upload/v1734360596/web_rjtuzv.jpg" style="width: auto; height: 170px;" class="card-img-top" alt="Web Development">
                     <div class="card-body">
-                        <h5 class="card-title">About Us</h5>
-                        <p class="card-text">Learn more about our platform, mission, and how we help you succeed.</p>
-                        <a href="{{ url_for('about') }}" class="btn btn-secondary">Learn More</a>
+                        <h5 class="card-title">Web Development</h5>
+                        <p class="card-text">Master front-end and back-end web development with HTML, CSS, JavaScript, and more.</p>
+                        <p class="card-text"><strong>Duration:</strong> 8 weeks | <strong>Level:</strong> Intermediate</p>
+                        <a href="#webDevelopmentModal" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#webDevelopmentModal">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Data Science -->
+            <div class="col-md-4">
+                <div class="card shadow-lg">
+                    <img src="https://res.cloudinary.com/dmjwhclog/image/upload/v1734360570/data_hd7yui.jpg" style="width: auto; height: 170px;" class="card-img-top" alt="Data Science">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Science</h5>
+                        <p class="card-text">Explore data analysis, machine learning, and AI concepts with hands-on projects. And learning Artifical Intelligence</p>
+                        <p class="card-text"><strong>Duration:</strong> 10 weeks | <strong>Level:</strong> Advanced</p>
+                        <a href="#dataScienceModal" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#dataScienceModal">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Mobile App Development -->
+            <div class="col-md-4 mt-3">
+                <div class="card shadow-lg">
+                    <img src="https://res.cloudinary.com/dmjwhclog/image/upload/v1734360586/mobile_lesnem.jpg" style="width: auto; height: 170px;" class="card-img-top" alt="Mobile App Development">
+                    <div class="card-body">
+                        <h5 class="card-title">Mobile App Development</h5>
+                        <p class="card-text">Learn how to develop mobile applications for Android and iOS using industry-leading frameworks.</p>
+                        <p class="card-text"><strong>Duration:</strong> 12 weeks | <strong>Level:</strong> Beginner to Intermediate</p>
+                        <a href="#mobileAppDevelopmentModal" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#mobileAppDevelopmentModal">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Cloud Computing -->
+            <div class="col-md-4 mt-3">
+                <div class="card shadow-lg">
+                    <img src="https://res.cloudinary.com/dmjwhclog/image/upload/v1734360561/cloud1_xpbbfq.jpg" style="width: auto; height: 170px;"  class="card-img-top" alt="Cloud Computing">
+                    <div class="card-body">
+                        <h5 class="card-title">Cloud Computing</h5>
+                        <p class="card-text">Understand the fundamentals of cloud platforms like AWS, Azure, and Google Cloud with hands-on labs.</p>
+                        <p class="card-text"><strong>Duration:</strong> 10 weeks | <strong>Level:</strong> Intermediate to Advanced</p>
+                        <a href="#cloudComputingModal" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#cloudComputingModal">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container mt-5">
-        <h1>Welcome to the Course Portal</h1>
-        <a href="{{ url_for('courses') }}" class="btn btn-info">View Courses</a>
+
+    <!-- About Section -->
+    <div class="container mt-5 bg1" id="about" >
+        <h2 class="text-center mb-4">About Us</h2>
+        <p class="text-center">At My Course Portal, we aim to provide high-quality courses that equip you with the skills you need to thrive in today's fast-paced technological world. Our platform is designed to give you hands-on experience and the flexibility to learn at your own pace.</p>
+        <div class="row mt-4">
+            <div class="col-md-5 ml-3 " >
+                <h5>Why Choose Us?</h5>
+                <ul>
+                    <li>Industry-relevant courses</li>
+                    <li>Experienced instructors</li>
+                    <li>Flexible learning schedules</li>
+                    <li>Hands-on projects</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h5>Our Mission</h5>
+                <p>Our goal is to empower individuals with the knowledge and skills needed to succeed in today's fast-paced technological world.</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Optional: Add JavaScript files -->
+    <!-- Contact Section -->
+    <div class="container mt-5" id="contact">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card bg-light shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title">Email Us</h5>
+                        <p class="card-text">For any inquiries, please feel free to email us at <a href="mailto:vennilavennila472@gmail.com">vennila@gmail.com</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-light shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title">Call Us</h5>
+                        <p class="card-text">You can reach us by phone at <strong>+91 9611998261</strong>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-light shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title">Location</h5>
+                        <p class="card-text">Visit us at 123 Course Road, Dream, Country.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+      
+
+    <!-- Modal: Programming -->
+    <div class="modal fade" id="programmingModal" tabindex="-1" role="dialog" aria-labelledby="programmingModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="programmingModalLabel">Programming Languages</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Course Overview:</h5>
+                    <p>Learn to code in popular programming languages such as Python, Java, C++, and more! This course covers both basic and advanced concepts.</p>
+                    <h5>Key Topics:</h5>
+                    <ul>
+                        <li>Syntax & Semantics</li>
+                        <li>Data Structures</li>
+                        <li>Object-Oriented Programming (OOP)</li>
+                        <li>Advanced Algorithms</li>
+                    </ul>
+                    <h5>Prerequisites:</h5>
+                    <p>Basic knowledge of computers and an eagerness to learn!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Web Development -->
+    <div class="modal fade" id="webDevelopmentModal" tabindex="-1" role="dialog" aria-labelledby="webDevelopmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="webDevelopmentModalLabel">Web Development</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Course Overview:</h5>
+                    <p>This comprehensive course covers both front-end and back-end development, using technologies like HTML, CSS, JavaScript, React, Node.js, and more.</p>
+                    <h5>Key Topics:</h5>
+                    <ul>
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript Basics</li>
+                        <li>Responsive Web Design</li>
+                        <li>Web Development Frameworks</li>
+                    </ul>
+                    <h5>Prerequisites:</h5>
+                    <p>No prior experience is needed—just an enthusiasm to start building amazing websites!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Data Science -->
+    <div class="modal fade" id="dataScienceModal" tabindex="-1" role="dialog" aria-labelledby="dataScienceModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="dataScienceModalLabel">Data Science</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Course Overview:</h5>
+                    <p>This course covers everything from the basics of data analysis to advanced machine learning algorithms. You will use Python, Pandas, and TensorFlow.And learning Artifical Intelligence</p>
+                    <h5>Key Topics:</h5>
+                    <ul>
+                        <li>Data Manipulation & Cleaning</li>
+                        <li>Machine Learning Algorithms</li>
+                        <li>Data Visualization with Matplotlib</li>
+                        <li>Deep Learning</li>
+                    </ul>
+                    <h5>Prerequisites:</h5>
+                    <p>Knowledge of Python and basic math/statistics concepts would be helpful.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Mobile App Development -->
+    <div class="modal fade" id="mobileAppDevelopmentModal" tabindex="-1" role="dialog" aria-labelledby="mobileAppDevelopmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mobileAppDevelopmentModalLabel">Mobile App Development</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Course Overview:</h5>
+                    <p>Build mobile apps with Android and iOS using Flutter, React Native, and Swift. The course includes practical app-building projects.</p>
+                    <h5>Key Topics:</h5>
+                    <ul>
+                        <li>Flutter & React Native</li>
+                        <li>Mobile App UI/UX</li>
+                        <li>Cross-Platform Development</li>
+                        <li>Publishing Apps</li>
+                    </ul>
+                    <h5>Prerequisites:</h5>
+                    <p>Basic knowledge of programming is recommended, but no prior mobile app experience is needed.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Cloud Computing -->
+    <div class="modal fade" id="cloudComputingModal" tabindex="-1" role="dialog" aria-labelledby="cloudComputingModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cloudComputingModalLabel">Cloud Computing</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Course Overview:</h5>
+                    <p>This course covers cloud fundamentals and hands-on labs for major cloud providers like AWS, Azure, and Google Cloud.</p>
+                    <h5>Key Topics:</h5>
+                    <ul>
+                        <li>Cloud Basics & Cloud Security</li>
+                        <li>Compute, Storage, Networking</li>
+                        <li>Cloud Automation & DevOps</li>
+                        <li>Cloud Platforms (AWS, GCP, Azure)</li>
+                    </ul>
+                    <h5>Prerequisites:</h5>
+                    <p>Basic IT knowledge is helpful but not required.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS via CDN -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <footer class="footer mt-3">
+        <div class="footer-content">
+          <p>&copy; 2024 My Course Portal. All rights reserved.</p>
+        </div>
+      </footer>
 </body>
 </html>
