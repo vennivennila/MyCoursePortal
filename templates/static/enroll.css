@@ -1,0 +1,75 @@
+/* General Body Styling */
+body {
+    background-color: #f9f9f9; /* Light gray background for subtle contrast */
+    font-family: 'Arial', sans-serif;
+    color: #343a40; /* Dark gray for text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styling */
+.container {
+    margin-top: 50px;
+    max-width: 800px;
+    background-color: #ffffff; /* White background for focus */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a professional look */
+}
+
+/* Card Styling */
+.card {
+    border: none; /* Remove default border for cleaner design */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff; /* Bootstrap primary color for title */
+}
+
+.card-text {
+    font-size: 16px;
+    color: #6c757d; /* Light gray text for description */
+    margin-bottom: 20px;
+}
+
+/* Form Button Styling */
+.btn-success {
+    background-color: #28a745; /* Green for success */
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Alert Styling */
+.alert {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 20px;
+    }
+    .card-text {
+        font-size: 14px;
+    }
+    .btn-success {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}

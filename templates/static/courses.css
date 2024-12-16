@@ -1,0 +1,67 @@
+/* General Body Style */
+body {
+    background-color: #f8f9fa; /* Light gray background for a clean look */
+    font-family: 'Arial', sans-serif;
+    color: #343a40; /* Dark gray for text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styling */
+.container {
+    background-color: #ffffff; /* White background for the container */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a modern look */
+}
+
+/* Header Style */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #007bff; /* Blue color for the header */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* List Style */
+ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+}
+
+ul li {
+    background-color: #f8f9fa; /* Light background for items */
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border: 1px solid #dee2e6; /* Border for each course */
+    border-radius: 5px;
+    font-size: 18px;
+    color: #495057; /* Slightly darker gray for list items */
+    transition: all 0.3s ease;
+}
+
+ul li:hover {
+    background-color: #e2e6ea; /* Light hover effect for list items */
+}
+
+/* Button Styling */
+.btn {
+    display: block;
+    width: 150px;
+    margin: 20px auto;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    background-color: #6c757d; /* Gray button */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+}

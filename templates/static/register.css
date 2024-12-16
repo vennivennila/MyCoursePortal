@@ -1,0 +1,56 @@
+/* File: static/style.css */
+
+/* General Styles */
+body {
+    background-color: #f8f9fa; /* Light gray background */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 50px; /* Add spacing from the top */
+}
+
+/* Card Styles */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Header Styles */
+.card-header {
+    background-color: #28a745; /* Bootstrap success color */
+    color: white;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Input Fields */
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Submit Button */
+.btn-primary {
+    background-color: #28a745; /* Matching success color for the register button */
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Slightly darker green on hover */
+}
+
+/* Responsive Card Styling */
+@media (max-width: 768px) {
+    .card {
+        margin-top: 20px;
+    }
+}
